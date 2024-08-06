@@ -1,7 +1,9 @@
 const express = require("express");
 
-const userSignUp = (req, res) => {
+module.exports.userSignUp = (req, res) => {
   console.log(req.body);
 };
 
-module.exports = userSignUp;
+module.exports.getAllBlogs = (req, res) => {
+  console.log("Blogs Fetched!");
+};
