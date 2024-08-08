@@ -1,6 +1,15 @@
 const express = require("express");
 const router = require("./Routes/userRoutes");
 const app = express();
+const cors = require("cors");
+
+// Install library named , 'cors' : command -> npm i cors
+app.use(
+  cors({
+    origin: "http://localhost:5173",  //Frontend URL
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
