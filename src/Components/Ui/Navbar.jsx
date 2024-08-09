@@ -19,15 +19,31 @@ const Navbar = () => {
       path: "/contact-us",
       linkName: "Contact Us",
     },
+    {
+      path: "/sign-up",
+      linkName: "Sign Up",
+    },
+    {
+      path: "/Log-in",
+      linkName: "Log In",
+    },
   ];
 
   return (
     <>
-      <div>
-        {links.map((elem) => {
-          return <Link to={elem.path}>{elem.linkName}</Link>;
-        })}
-      </div>
+      <nav className="bg-gray-800 p-4">
+        <div className="container mx-auto flex justify-evenly">
+          {links.map((elem, index) => (
+            <Link
+              key={index}
+              to={elem.path}
+              className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              {elem.linkName}
+            </Link>
+          ))}
+        </div>
+      </nav>
       <Outlet />
     </>
   );

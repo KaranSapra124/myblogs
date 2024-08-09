@@ -3,7 +3,7 @@ const router = require("./Routes/userRoutes");
 const app = express();
 const cors = require("cors");
 
-// Install library named , 'cors' : command -> npm i cors
+// Install library named , 'cors' : command -> npm i cors [CORS ERROR]
 app.use(
   cors({
     origin: "http://localhost:5173",  //Frontend URL

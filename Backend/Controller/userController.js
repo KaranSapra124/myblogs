@@ -1,7 +1,7 @@
 const express = require("express");
 
 module.exports.userSignUp = (req, res) => {
-  console.log(req.body);
+  return res.status(200).send({ message: "You have logged in!" });
 };
 
 module.exports.getAllBlogs = (req, res) => {

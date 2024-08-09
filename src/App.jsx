@@ -3,6 +3,9 @@ import "./App.css";
 import Navbar from "./Components/Ui/Navbar";
 import Home from "./Components/Home/Home";
 import SignUp from "./Components/Auth/SignUp";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Login from "./Components/Auth/Login";
 
 function App() {
   const routes = createBrowserRouter([
@@ -15,14 +18,19 @@ function App() {
           element: <Home />,
         },
         {
-          path: "/SignUp",
+          path: "/sign-up",
           element: <SignUp />,
+        },
+        {
+          path: "/Log-in",
+          element: <Login />,
         },
       ],
     },
   ]);
   return (
     <>
+      <ToastContainer></ToastContainer>
       <RouterProvider router={routes}></RouterProvider>
     </>
   );
