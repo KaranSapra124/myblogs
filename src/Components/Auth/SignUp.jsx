@@ -7,11 +7,13 @@ const SignUp = () => {
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
   const [phnNum, setPhnum] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = async () => {
     const newObj = {
       Name: Name,
       Email: Email,
+      password: password,
       phnNum: phnNum,
     };
 
@@ -45,6 +47,12 @@ const SignUp = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
+        <input
+          type="password"
+          placeholder="Password"
+          className="max-[400px]:ml-0 ml-2 w-full p-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <input
           type="number"
           placeholder="Phone Number"
