@@ -17,11 +17,12 @@ module.exports.userSignUp = async (req, res) => {
 
 module.exports.userLogIn = async (req, res) => {
   const { email, password } = req.body;
-  const found = await userModel.findOne({ Email: email });
-  const isTrue = await bcrypt.compare(password, found.password);
-  isTrue
-    ? res.status(200).send({ message: `Welcome ${found.Name}` })
-    : res.status(403).send({ message: "Invalid Password!" });
+  console.log(req.user)
+  // const found = await userModel.findOne({ Email: email });
+  // const isTrue = await bcrypt.compare(password, found.password);
+  // isTrue
+  //   ? res.status(200).send({ message: `Welcome ${found.Name}` })
+  //   : res.status(403).send({ message: "Invalid Password!" });
 };
 
 module.exports.getAllBlogs = (req, res) => {
