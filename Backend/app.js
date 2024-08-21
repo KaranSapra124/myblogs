@@ -3,6 +3,7 @@ const router = require("./Routes/userRoutes");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 
 // mongodb+srv://My_Blog:myblog123@cluster0.vcg2k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 mongoose
@@ -17,6 +18,7 @@ mongoose
   });
 
 // Install library named , 'cors' : command -> npm i cors [CORS ERROR]
+app.use(cookieParser());
 app.use(
   cors({
     origin: "http://localhost:5173", //Frontend URL
