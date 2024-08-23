@@ -8,10 +8,6 @@ const Navbar = () => {
       linkName: "Home",
     },
     {
-      path: "/allblogs",
-      linkName: "All Blogs",
-    },
-    {
       path: "/about",
       linkName: "About",
     },
@@ -26,6 +22,10 @@ const Navbar = () => {
     {
       path: "/Log-in",
       linkName: "Log In",
+    },
+    {
+      path: "/add-blog",
+      linkName: "Add Blog",
     },
   ];
 

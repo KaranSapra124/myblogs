@@ -25,8 +25,9 @@ module.exports.userLogIn = async (req, res) => {
 // Blogs
 // Create a blog
 module.exports.createBlog = async (req, res) => {
-  await blogsModel.create(req.body);
-  return res.status(201).send({ message: "Blog Created Successfully!" });
+  console.log(req.file, req.files);
+  // await blogsModel.create(req.body);
+  // return res.status(201).send({ message: "Blog Created Successfully!" });
 };
 module.exports.getAllBlogs = (req, res) => {
   console.log("Blogs Fetched!");
