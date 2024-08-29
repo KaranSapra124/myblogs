@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import Cookies from "js-cookie";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -16,6 +17,9 @@ const Login = () => {
         "http://localhost:3000/user/user-log-in",
         login
       );
+
+      Cookies.set("userId", res?.data?.userId);
+
       toast.success(res?.data?.message);
     } catch (err) {
       toast.error(err?.response?.data?.message);

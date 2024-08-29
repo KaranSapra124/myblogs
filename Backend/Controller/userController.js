@@ -25,8 +25,16 @@ module.exports.userLogIn = async (req, res) => {
 // Blogs
 // Create a blog
 module.exports.createBlog = async (req, res) => {
-  console.log(req.file, req.files);
-  // await blogsModel.create(req.body);
+  // const { filename } = req.file;
+  console.log(req.user,"USER");
+
+  
+  // await blogsModel.create({
+  //   title: req.body.blogTitle,
+  //   description: req.body.blogDesc,
+  //   author: req.user,
+  //   img: filename,
+  // });
   // return res.status(201).send({ message: "Blog Created Successfully!" });
 };
 module.exports.getAllBlogs = (req, res) => {
