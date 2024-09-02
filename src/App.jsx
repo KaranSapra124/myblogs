@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./Components/Auth/Login";
 import AddBlogs from "./Components/Blogs/AddBlogs";
+import GetBlogs from "./Components/Blogs/GetBlogs";
 
 function App() {
   const routes = createBrowserRouter([
@@ -29,6 +30,10 @@ function App() {
         {
           path: "/add-blog",
           element: <AddBlogs />,
+        },
+        {
+          path: "/get-blogs",
+          element: <GetBlogs />,
         },
       ],
     },

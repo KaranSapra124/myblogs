@@ -15,8 +15,13 @@ const Login = () => {
     try {
       let res = await axios.post(
         "http://localhost:3000/user/user-log-in",
-        login
+        login,
+        {
+          withCredentials: true,
+        }
       );
+
+      console.log(res)
 
       Cookies.set("userId", res?.data?.userId);
 

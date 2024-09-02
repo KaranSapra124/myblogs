@@ -27,6 +27,10 @@ const Navbar = () => {
       path: "/add-blog",
       linkName: "Add Blog",
     },
+    {
+      path: "/get-blogs",
+      linkName: "Get Blogs",
+    },
   ];
 
   return (

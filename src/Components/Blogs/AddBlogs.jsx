@@ -19,7 +19,10 @@ const AddBlogs = () => {
       newFormData.append("blogDesc", formData.blogDesc);
       await axios.post(
         "http://localhost:3000/user/user-create-blog",
-        newFormData
+        newFormData,
+        {
+          withCredentials: true,
+        }
       );
     } catch (err) {
       console.log(err);

@@ -10,9 +10,10 @@ router.post("/user-log-in", isLoggedIn, userSignUp.userLogIn);
 // Routes
 router.post(
   "/user-create-blog",
+  isLoggedIn,
   upload.single("blogImg"),
   userSignUp.createBlog
 );
-router.get("/all-blogs", isLoggedIn, userSignUp.getAllBlogs);
+router.get("/all-blogs",  userSignUp.getAllBlogs);
 
 module.exports = router;

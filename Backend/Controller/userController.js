@@ -25,18 +25,20 @@ module.exports.userLogIn = async (req, res) => {
 // Blogs
 // Create a blog
 module.exports.createBlog = async (req, res) => {
-  // const { filename } = req.file;
-  console.log(req.user,"USER");
+  const { filename } = req.file;
+  console.log(req.user, "USER");
 
-  
-  // await blogsModel.create({
-  //   title: req.body.blogTitle,
-  //   description: req.body.blogDesc,
-  //   author: req.user,
-  //   img: filename,
-  // });
-  // return res.status(201).send({ message: "Blog Created Successfully!" });
+  await blogsModel.create({
+    title: req.body.blogTitle,
+    description: req.body.blogDesc,
+    author: req.user,
+    img: filename,
+  });
+  return res.status(201).send({ message: "Blog Created Successfully!" });
 };
-module.exports.getAllBlogs = (req, res) => {
-  console.log("Blogs Fetched!");
+module.exports.getAllBlogs = async (req, res) => {
+  const getBlogs = await blogsModel.find().populate("author"); 
+  return res
+    .status(200)
+    .send({ message: "Blogs Fetched Successfully!", blogs: getBlogs });
 };
